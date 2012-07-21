@@ -1,4 +1,6 @@
 Herokutest::Application.routes.draw do
+  resources :employees
+
   get "menus/menu1"
 
   # The priority is based upon order of creation:
