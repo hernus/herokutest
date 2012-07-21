@@ -2,6 +2,8 @@ Herokutest::Application.routes.draw do
   resources :employees
 
   get "menus/menu1"
+  
+  match 'elist' => 'employees#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
