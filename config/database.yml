@@ -19,13 +19,14 @@ test:
     adapter: postgresql
     encoding: utf8
     reconnect: false
-    database: origin12_test
+    database: herokutest_test
     pool: 5
     username: user1
     password:
 
 production:
-  adapter: postgresql
-  database: prod
-  pool: 5
-  timeout: 5000
+    adapter: postgresql
+    encoding: utf8
+    reconnect: false
+    database: herokutest_prod
+    pool: 5
