@@ -1,4 +1,4 @@
-<h1>Not Listing employees</h1>
+<h1>Listing employees</h1>
 
 <table>
   <tr>
@@ -9,6 +9,17 @@
     <th></th>
     <th></th>
   </tr>
+
+<% @employees.each do |employee| %>
+  <tr>
+    <td><%= employee.employeenumber %></td>
+    <td><%= employee.firstname %></td>
+    <td><%= employee.lastname %></td>
+    <td><%= link_to 'Show', employee %></td>
+    <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+    <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
 </table>
 
 <br />
