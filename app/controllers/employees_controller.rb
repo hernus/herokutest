@@ -2,8 +2,7 @@ class EmployeesController < ApplicationController
   # GET /employees
   # GET /employees.json
   def index
-    @employees = Employee.all
-
+    @employees = Employee.paginate( per_page: 10, page: params[:page] )
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @employees }

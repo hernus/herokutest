@@ -1,0 +1,13 @@
+<h1>Customer List</h1>
+<p><%= flash[:success] %>
+
+<table boder=0>
+<% @customers.each do |c| %>
+<tr><td><%= c.name %>	
+	<td><%= c.address %>
+	<td><%= link_to 'show', c %>
+	    <%= link_to 'edit', edit_customer_path(c) %>
+		<%= link_to 'delete', c, method: :delete %>		
+<% end %>	
+</table>	
+<%= link_to 'Add New Customer', action: 'new' %>

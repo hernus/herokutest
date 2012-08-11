@@ -1,0 +1,19 @@
+<h1>Brand New Customer</h1>
+<%= form_for :customer, url:{action:'create'} do |f|%>
+
+<% if @customer.errors
+      @customer.errors.full_messages.each do |message| %>
+     <p> <%= message %>
+<%   end 
+   end
+%>
+
+      <%= f.label :name %>  
+<br>  <%= f.text_field :name %>
+
+<p>  <%= f.label :address %>
+<br>  <%= f.text_field :address %>
+
+<%= f.submit 'Save' %>
+
+<% end %>

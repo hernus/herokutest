@@ -1,0 +1,13 @@
+<%= @title = "Users" %>
+<table>
+	<% @users.each do |user|%>
+	  <tr>
+		<td> <%= user.email%> </td>
+		<td><%= user.password%></td>
+		<td><%= link_to 'edit', edit_user_path(user) %>
+			<%= link_to 'delete', user, method: :delete %>	
+		 
+	<% end %>
+</table>	
+<p><%= link_to "Add new User", new_user_path %>
+<p> <%= session[:user_email] %>

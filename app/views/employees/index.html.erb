@@ -1,27 +1,28 @@
-<h1>Listing employees</h1>
-
-<table>
+<% @title = "Employees "%>
+<center><%= will_paginate(@employees) %>
+<table class="table table-condensed">
+<thead>
   <tr>
     <th>Employeenumber</th>
     <th>Firstname</th>
     <th>Lastname</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
-
+</thead>
+<tbody>
 <% @employees.each do |employee| %>
   <tr>
     <td><%= employee.employeenumber %></td>
     <td><%= employee.firstname %></td>
     <td><%= employee.lastname %></td>
-    <td><%= link_to 'Show', employee %></td>
-    <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-    <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'show', employee %>
+    <%= link_to 'edit', edit_employee_path(employee)  %>
+    <%= link_to 'delete', employee, method: :delete, data: { confirm: 'Are you sure?' }  %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
-
-<br />
-
-<%= link_to 'New Employee', new_employee_path %>
+<%= will_paginate(@employees) %>
+</center>
+<%= link_to 'Add New Employee', new_employee_path, class:"btn btn-primary" %>
+<%= link_to 'Quit', new_employee_path, class:"btn btn-primary" %>

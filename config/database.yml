@@ -19,7 +19,7 @@ test:
     adapter: postgresql
     encoding: utf8
     reconnect: false
-    database: herokutest_test
+    database: herokutest_development
     pool: 5
     username: user1
     password:

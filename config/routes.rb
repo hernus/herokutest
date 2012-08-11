@@ -1,8 +1,16 @@
 Herokutest::Application.routes.draw do
-  resources :employees
+  match "join", to: 'join#join'
 
-  get "menus/menu1"
-  
+  get "join/welcome"
+
+  match 'login', to: 'session#login'
+  match 'logout', to: 'session#logout'  
+  resources :employees
+  resources :customers
+  resources :users
+
+  get "menus/menu1"  
+  post "session/create_session"
   match 'elist' => 'employees#index'
 
   # The priority is based upon order of creation:

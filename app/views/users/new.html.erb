@@ -1,0 +1,18 @@
+<h1>Create new User</h1>
+
+<% if @user.errors %>
+<% @user.errors.full_messages.each do |message| %>
+  <%= message %>
+<% end
+   end %>
+
+
+<%= form_for(@user) do |f| %>
+  <p> <%= f.label :email %> 
+  <br><div class=field> <%= f.text_field :email %> </div>
+
+  <p> <%= f.label :password %>
+  <br><div class=field><%= f.text_field :password	%></div>
+
+  <p> <%= f.submit 'Save' %>
+<% end %>

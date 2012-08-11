@@ -6,9 +6,31 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
+<body>	
+<div id="header"> 
+    <div class="header_left">
+	  <%= link_to 'Home', root_path %> 
+	</div>
+	<div class="header_right">
+	<% if current_user %>
+	   <%= current_user.email %> | <%= link_to('Log Out', '/logout') %>  
+	<% else %>
+      <%= link_to('Log In', '/login') %>  
+	<% end %> 
+	</div>
+</div>
+<br>
+<div class="outer">
+<div class="exit_button"><%= link_to image_tag("exit_button.png"), root_path %></div>	
+<h1><%= @title %></h1>	
+<div class="container">
+  <% if current_user || params[:action] == "login" || params[:action] == "join" %>
+	<%= yield %>
+  <% else %>
+    <%= render(partial: "static/welcome") %>
+  <% end %>
+</div>
+</div>
 
 </body>
 </html>

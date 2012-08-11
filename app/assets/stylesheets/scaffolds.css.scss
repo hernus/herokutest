@@ -1,9 +1,20 @@
 body {
   background-color: #fff;
+  background-image:url('background.png');
+  background-repeat:repeat-x;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
-  line-height: 18px; }
+  line-height: 18px; 
+  margin:0}
+
+#wrapper {
+  margin-left:10px;
+  margin-right:10px;
+  margin-top:0;
+  margin-bottom:0;
+}
+
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -21,7 +32,7 @@ a {
     color: #666; }
   &:hover {
     color: #fff;
-    background-color: #000; } }
+    background-color: transparent; } }
 
 div {
   &.field, &.actions {
@@ -30,10 +41,11 @@ div {
 #notice {
   color: green; }
 
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table; }
+.field{
+  .field_with_errors {
+    padding: 2px;
+    background-color: red;
+    display: table; } }
 
 #error_explanation {
   width: 450px;
