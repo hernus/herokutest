@@ -5,6 +5,7 @@ Herokutest::Application.routes.draw do
 
   match 'login', to: 'session#login'
   match 'logout', to: 'session#logout'  
+  match 'menu', to: 'menus#menu1'
   resources :employees
   resources :customers
   resources :users
@@ -62,7 +63,7 @@ Herokutest::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'employees#index'
+   root :to => 'menus#menu1'
 
   # See how all your routes lay out with "rake routes"
 

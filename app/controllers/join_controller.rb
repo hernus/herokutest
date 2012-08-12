@@ -3,7 +3,7 @@ class JoinController < ApplicationController
     if params[:user].present?
       @user = User.new(params[:user])
       if @user.save
-        render text:"Account succesfully created. Welcome onboard"
+        render "success"
       else
         flash[:error] = "Could not save due to errors"
         render controller: 'join', action: 'join'

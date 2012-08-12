@@ -24,9 +24,3 @@ test:
     username: user1
     password:
 
-production:
-    adapter: postgresql
-    encoding: utf8
-    reconnect: false
-    database: herokutest_prod
-    pool: 5

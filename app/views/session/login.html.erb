@@ -1,9 +1,16 @@
-<h1>Login</h1>
+<% @title="Log In" %>
 <p><%= flash[:error] %>
+
 <%= form_for :user, url:{action:'login'} do |f| %>
-<p><%= f.label :email  %>
-<br><%= f.text_field :email  %>	
-<p><%= f.label :password  %>
-<br><%= f.text_field :password %>
-<p><%= f.submit 'Sign In' %>
+<div class="field">
+<%= f.label :email  %>
+<%= f.text_field :email  %>	
+</div>
+
+<div class="field">
+<%= f.label :password  %>
+<%= f.password_field :password %>
+</div>
+
+<p><%= f.submit 'Log In', class:'btn btn-primary'%>
 <% end %>

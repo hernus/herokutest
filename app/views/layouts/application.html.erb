@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +22,9 @@
 </div>
 <br>
 <div class="outer">
-<div class="exit_button"><%= link_to image_tag("exit_button.png"), root_path %></div>	
+<div class="exit_button">
+<%= link_to image_tag("exit_button.png"), root_path %>
+</div>	
 <h1><%= @title %></h1>	
 <div class="container">
   <% if current_user || params[:action] == "login" || params[:action] == "join" %>
@@ -34,3 +37,4 @@
 
 </body>
 </html>
+

@@ -1,3 +1,4 @@
+<p><%= flash[:error] %></p>
 <%= form_for(@employee) do |f| %>
   <% if @employee.errors.any? %>
     <div id="error_explanation">
@@ -12,18 +13,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :employeenumber %><br />
+    <%= f.label :employeenumber %>
     <%= f.text_field :employeenumber %>
   </div>
   <div class="field">
-    <%= "First Name" %><br />
+    <%= f.label :firstname, "First Name" %>
     <%= f.text_field :firstname %>
   </div>
   <div class="field">
-    <%= f.label :lastname %><br />
+    <%= f.label :lastname, "Last Name"%>
     <%= f.text_field :lastname %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class:"btn btn-primary"%>
   </div>
 <% end %>
+<%= hline %>
+<%= link_to "Back to list", employees_path %>
+

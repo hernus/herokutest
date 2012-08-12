@@ -1,4 +1,4 @@
-<h1>Create new User</h1>
+<% @title = "New User"%>
 
 <% if @user.errors %>
 <% @user.errors.full_messages.each do |message| %>
@@ -8,11 +8,18 @@
 
 
 <%= form_for(@user) do |f| %>
-  <p> <%= f.label :email %> 
-  <br><div class=field> <%= f.text_field :email %> </div>
+  <div class="field">  
+    <%= f.label :email %> 
+    <%= f.text_field :email %> 
+  </div>
 
-  <p> <%= f.label :password %>
-  <br><div class=field><%= f.text_field :password	%></div>
+  <div class="field">
+  <%= f.label :password %>
+  <%= f.text_field :password	%>
+  </div>
 
-  <p> <%= f.submit 'Save' %>
+<%= f.submit 'Save', class:"btn btn-primary" %>
 <% end %>
+<%= hline %>
+<%= link_to "Back to list", users_path %>
+

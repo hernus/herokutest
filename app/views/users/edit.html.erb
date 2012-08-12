@@ -1,11 +1,17 @@
-<h1>Edit User <%= @user.email %></h1>
-
+<% @title = "Edit User #{@user.email}"%>
+<p><%= flash[:error] %></p>
 <%= form_for(@user) do |f|%>
-<p>  <%= f.label :email %>
-<br> <%= f.text_field :email %>
+  <div class="field">
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  </div>
+ 
+  <div class="field">
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+  </div>
 
-<p>  <%= f.label :password %>
-<br> <%= f.text_field :password %>
-
-<p> <%= f.submit 'Save'%>	
+<p> <%= f.submit 'Save', class:'btn btn-primary'%>
 <% end %>	
+<%= hline %>
+<%= link_to "Back to list", users_path %>

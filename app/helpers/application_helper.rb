@@ -16,4 +16,8 @@ module ApplicationHelper
     session[:current_user_id] = user.id
   end
   
+  def hline
+    '<div style="background-color:#ddd; height:1px; margin-bottom:3px"></div>'.html_safe
+  end  
+  
 end

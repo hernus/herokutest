@@ -6,7 +6,7 @@ class SessionController < ApplicationController
       db_user = User.find_by_email(@user.email)
       if db_user && (db_user.password == @user.password)
         session[:current_user_id] = db_user.id
-        redirect_to root_path
+        redirect_to controller:"menus", action:"menu1"
       else
         flash[:error] = "Wrong password or email"
       end          

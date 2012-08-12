@@ -1,13 +1,22 @@
-<%= @title = "Users" %>
-<table>
+<% @title = "Users" %>
+
+<%= will_paginate %>
+
+<table class="table table-condensed">
+	<thead>
+		<tr><th>Email</th><th></th></tr>
+	</thead>
+	<tbody>	
 	<% @users.each do |user|%>
 	  <tr>
 		<td> <%= user.email%> </td>
-		<td><%= user.password%></td>
 		<td><%= link_to 'edit', edit_user_path(user) %>
 			<%= link_to 'delete', user, method: :delete %>	
 		 
 	<% end %>
+	</tbody>
 </table>	
-<p><%= link_to "Add new User", new_user_path %>
-<p> <%= session[:user_email] %>
+
+<%= will_paginate %>
+
+<p><%= link_to "Add new User", new_user_path , class:"btn btn-primary"%>
